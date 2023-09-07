@@ -3,34 +3,34 @@
     {
       "id": 1,
       "nombre": "Pepito Perez",
-      "edad": 19,
+      "email": "pepe@gmail.com",
       "tipoDoc": "Cedula de ciudadania",
       "numDoc": "108976543",
-      "telefono": "315678903"
+      "password": "pepe12345"
     },
     {
       "id": 2,
       "nombre": "Manuela Quintero",
-      "edad": 25,
+      "email": "manu@gmail.com",
       "tipoDoc": "Cedula de ciudadania",
       "numDoc": "104532456",
-      "telefono": "3209807685"
+      "password": "manuela0000"
     },
     {
       "id": 3,
       "nombre": "Jose Gomez",
-      "edad": 16,
+      "email": "josesito@gmail.com",
       "tipoDoc": "Tarjeta de identidad",
       "numDoc": "104567345",
-      "telefono": "3123567843"
+      "password": "joseG101"
     },
     {
       "id": 4,
       "nombre": "Camila Avila",
-      "edad": 30,
+      "email": "cami@hotmail.com",
       "tipoDoc": "Pasaporte",
       "numDoc": "2093845678",
-      "telefono": "5554567273"
+      "password": "camila1201"
     }
   ],
   "Agendas": [
