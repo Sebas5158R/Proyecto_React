@@ -2,8 +2,7 @@
   "Pacientes": [
     {
       "id": 1,
-      "nombre": "Pepito",
-      "apellido": "Perez",
+      "nombre": "Pepito Perez",
       "edad": 19,
       "tipoDoc": "Cedula de ciudadania",
       "numDoc": "108976543",
@@ -11,8 +10,7 @@
     },
     {
       "id": 2,
-      "nombre": "Manuela",
-      "apellido": "Quintero",
+      "nombre": "Manuela Quintero",
       "edad": 25,
       "tipoDoc": "Cedula de ciudadania",
       "numDoc": "104532456",
@@ -20,8 +18,7 @@
     },
     {
       "id": 3,
-      "nombre": "Jose",
-      "apellido": "Perez",
+      "nombre": "Jose Gomez",
       "edad": 16,
       "tipoDoc": "Tarjeta de identidad",
       "numDoc": "104567345",
@@ -29,8 +26,7 @@
     },
     {
       "id": 4,
-      "nombre": "Camila",
-      "apellido": "Gomez",
+      "nombre": "Camila Avila",
       "edad": 30,
       "tipoDoc": "Pasaporte",
       "numDoc": "2093845678",
