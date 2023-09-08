@@ -1,10 +1,10 @@
-import { config } from "../config";
+import { api } from "../config"
 
 class APIInvoke {
     async invokeGET(resource, queryParams) {
 
         queryParams = queryParams || []
-        const queryString = queryParams.reduce((last, q, i) => last + `${i === 0 ? '?': "&"} ${q}`, '');
+        const queryString = queryParams.reduce((last, q, i) => last + `${i === 0 ? '?': "&"} ${q}`, '')
 
         const token = localStorage.getItem("token");
         let bearer;
@@ -23,8 +23,8 @@ class APIInvoke {
         }
 
 
-        const url = `${config.api.baseURL}${resource}${queryString}`
-        let response = (await(await fetch(url, data)).json)
+        const url = `${api.baseURL}${resource}${queryString}`
+        let response = (await(await fetch(url, data)).json())
         return response
     }
 
@@ -47,8 +47,8 @@ class APIInvoke {
             }
         }
 
-        const url = `${config.api.baseURL}${resource}`
-        let response = (await(await fetch(url, data)).json)
+        const url = `${api.baseURL}${resource}`
+        let response = (await(await fetch(url, data)).json())
         return response;
 
     }
@@ -72,8 +72,8 @@ class APIInvoke {
         }
 
 
-        const url = `${config.api.baseURL}${resource}`
-        let response = (await(await fetch(url, data)).json)
+        const url = `${api.baseURL}${resource}`
+        let response = (await(await fetch(url, data)).json())
         return response;
     }
 
@@ -95,10 +95,11 @@ class APIInvoke {
             }
         }
 
-        const url = `${config.api.baseURL}${resource}`
-        let response = (await(await fetch(url, data)).json)
+        const url = `${api.baseURL}${resource}`
+        let response = (await(await fetch(url, data)).json())
         return response;
     }
 }
+
 
 export default new APIInvoke()

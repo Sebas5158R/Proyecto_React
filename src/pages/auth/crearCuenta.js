@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import APIInvoke from "../../utils/APIInvoke";
-// Sweet alerts
-import swal from "sweetalert";
+import swal from 'sweetalert';
 
 const CrearCuenta = () => {
   const [paciente, setPaciente] = useState({
@@ -28,15 +27,67 @@ const CrearCuenta = () => {
 
 
   const crearCuenta = async () => {
-    const data = {
-      full_name: paciente.full_name,
-      email: paciente.email,
-      document_type: paciente.document_type,
-      document_number: paciente.document_number,
-      password: paciente.password
+    if(password.length < 6) {
+      const msg = "La contraseña debe tener minimo 6 caracteres"
+      swal ({
+        title: 'Error',
+        text: msg,
+        icon: 'error',
+        buttons: {
+          confirm: {
+            text: 'Ok',
+            value: true,
+            visible: true,
+            className: 'btn btn-danger',
+            closeModal: true
+          }
+        }
+      });
+    } else {
+      const data = {
+        full_name: paciente.full_name,
+        email: paciente.email,
+        document_type: paciente.document_type,
+        document_number: paciente.document_number,
+        password: paciente.password
+      }
+      const response = await APIInvoke.invokePOST(`/Pacientes`, data);
+      const mensaje = response.msg;
+
+      if(mensaje === 'El paciente ya existe') {
+        const msg = "el paciente ya existe.";
+        swal({
+          title: 'Error',
+          text: msg,
+          icon: 'error',
+          buttons: {
+          confirm: {
+          text: 'Ok',
+          value: true,
+          visible: true,
+          className: 'btn btn-danger',
+          closeModal: true
+          }
+        }
+        });
+      } else {
+        const msg = "Cuenta creada exitosamente.";
+        swal({
+          title: 'Información',
+          text: msg,
+          icon: 'info',
+          buttons: {
+            confirm: {
+            text: 'Ok',
+            value: true,
+            visible: true,
+            className: 'btn btn-primary',
+            closeModal: true
+          }
+        }
+        });
+      }
     }
-    const response = await APIInvoke.invokePOST(`/pacientes`, data);
-    console.log(response)
   }
 
   const onSubmit = (e) => {

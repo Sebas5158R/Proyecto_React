@@ -1,36 +1,36 @@
 {
   "Pacientes": [
     {
-      "id": 1,
-      "nombre": "Pepito Perez",
+      "full_name": "Pepito Perez",
       "email": "pepe@gmail.com",
-      "tipoDoc": "Cedula de ciudadania",
-      "numDoc": "108976543",
-      "password": "pepe12345"
+      "document_type": "Cedula de ciudadania",
+      "document_number": "108976543",
+      "password": "pepe12345",
+      "id": 1
     },
     {
-      "id": 2,
-      "nombre": "Manuela Quintero",
+      "full_name": "Manuela Quintero",
       "email": "manu@gmail.com",
-      "tipoDoc": "Cedula de ciudadania",
-      "numDoc": "104532456",
-      "password": "manuela0000"
+      "document_type": "Cedula de ciudadania",
+      "document_number": "104532456",
+      "password": "manuela0000",
+      "id": 2
     },
     {
-      "id": 3,
-      "nombre": "Jose Gomez",
+      "full_name": "Jose Gomez",
       "email": "josesito@gmail.com",
-      "tipoDoc": "Tarjeta de identidad",
-      "numDoc": "104567345",
-      "password": "joseG101"
+      "document_type": "Tarjeta de identidad",
+      "document_number": "104567345",
+      "password": "joseG101",
+      "id": 3
     },
     {
-      "id": 4,
-      "nombre": "Camila Avila",
+      "full_name": "Camila Avila",
       "email": "cami@hotmail.com",
-      "tipoDoc": "Pasaporte",
-      "numDoc": "2093845678",
-      "password": "camila1201"
+      "document_type": "Pasaporte",
+      "document_number": "2093845678",
+      "password": "camila1201",
+      "id": 4
     }
   ],
   "Agendas": [
