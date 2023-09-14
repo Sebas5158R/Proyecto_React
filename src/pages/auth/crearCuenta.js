@@ -96,7 +96,7 @@ const CrearCuenta = () => {
   };
 
   return (
-    <div class="hold-transition register-page">
+    <div className="hold-transition register-page">
       <div className="register-box">
         <div className="register-logo">
           <Link to={"#"}>
@@ -119,6 +119,7 @@ const CrearCuenta = () => {
                   id="full_name"
                   value={full_name}
                   onChange={onChange}
+                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -136,6 +137,7 @@ const CrearCuenta = () => {
                   name="email"
                   value={email}
                   onChange={onChange}
+                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -162,6 +164,7 @@ const CrearCuenta = () => {
                   name="document_number"
                   value={document_number}
                   onChange={onChange}
+                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -179,6 +182,7 @@ const CrearCuenta = () => {
                   name="password"
                   value={password}
                   onChange={onChange}
+                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">

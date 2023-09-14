@@ -11,23 +11,23 @@
     {
       "full_name": "Manuela Quintero",
       "email": "manu@gmail.com",
-      "document_type": "Cedula de ciudadania",
+      "document_type": "Tarjeta de identidad",
       "document_number": "104532456",
       "password": "manuela0000",
       "id": 2
     },
     {
-      "full_name": "Jose Gomez",
+      "full_name": "Jose Manuel",
       "email": "josesito@gmail.com",
       "document_type": "Tarjeta de identidad",
-      "document_number": "104567345",
+      "document_number": "10456",
       "password": "joseG101",
       "id": 3
     },
     {
       "full_name": "Camila Avila",
       "email": "cami@hotmail.com",
-      "document_type": "Pasaporte",
+      "document_type": "Cedula de ciudadania",
       "document_number": "2093845678",
       "password": "camila1201",
       "id": 4
