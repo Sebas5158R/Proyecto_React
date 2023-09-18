@@ -6,12 +6,12 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    return ( 
+    return (
         <div class="wrapper">
             <Navbar></Navbar>
             <SidebarContainer></SidebarContainer>
             <div className="content-wrapper">
-                
+
                 <ContentHeader
                     titulo={"Dashboard"}
                     breadCrumb1={"Inicio"}
@@ -21,7 +21,7 @@ const Home = () => {
 
                 <section className="content">
                     <div className="container-fluid">
-                       <div className="row">
+                        <div className="row">
                             <div className="col-lg-3 col-6">
                                 <div className="small-box bg-info">
                                     <div className="inner">
@@ -29,19 +29,34 @@ const Home = () => {
                                         <p>&nbsp;</p>
                                     </div>
                                     <div className="icon">
-                                        <i className="fa fa-edit"/>
+                                        <i className="fa fa-edit" />
                                     </div>
-                                    <Link to={"/proyectos-admin"} className="small-box-footer">Ver pacientes <i className="fas fa-arrow-circle-right"/></Link>
+                                    <Link to={"/proyectos-admin"} className="small-box-footer">Ver pacientes <i className="fas fa-arrow-circle-right" /></Link>
                                 </div>
 
                             </div>
-                        </div> 
+
+                            <div className="col-lg-3 col-6">
+                                <div className="small-box bg-warning">
+                                    <div className="inner">
+                                        <h3>Citas</h3>
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <div className="icon">
+
+                                        <i className="fa fa-chart-pie"></i>
+                                    </div>
+                                    <Link to={"/listar-citas"} className="small-box-footer">Ver citas<i className="fas fa-arrow-circle-right" /></Link>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
             <Footer></Footer>
         </div>
-     );
+    );
 }
- 
+
 export default Home;

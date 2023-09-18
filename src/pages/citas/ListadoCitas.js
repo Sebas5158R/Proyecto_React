@@ -2,23 +2,23 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import SidebarContainer from "../../components/SidebarContainer";
 import ContentHeader from "../../components/ContentHeader";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import data from "../../bbdd.json";
-import APIInvoke from "../../utils/APIInvoke";
 import swal from "sweetalert";
-import { Link, useNavigate } from "react-router-dom";
+import APIInvoke from "../../utils/APIInvoke";
 
-const ProyectosAdmin = () => {
-    // Para redirecconar de un componente a otro
-  const navigate = useNavigate();
+const ListadoCitas = () => {
 
-    const eliminarPaciente = async (e, idPaciente) => {
+    const navigate = useNavigate();
+
+    const eliminarCita = async (e, idCita) => {
         e.preventDefault();
-        const response = await APIInvoke.invokeDELETE(`/Pacientes/${idPaciente}`); 
+        const response = await APIInvoke.invokeDELETE(`/Citas/${idCita}`); 
         console.log(response);
         swal({
             title: "Información",
-            text: 'El paciente fue borrado correctamente',
+            text: 'La cita fue cancelada correctamente',
             icon: "success",
             buttons: {
               confirm: {
@@ -31,25 +31,25 @@ const ProyectosAdmin = () => {
             },
           });
         // Redireccionar
-        navigate("/proyectos-admin");
+        navigate("/listar-citas");
     }
 
-  return (
-    <div className="wrapper">
+    return ( 
+        <div className="wrapper">
       <Navbar></Navbar>
       <SidebarContainer></SidebarContainer>
       <div className="content-wrapper">
         <ContentHeader
-          titulo={"Listado de pacientes"}
+          titulo={"Listado de citas"}
           breadCrumb1={"Inicio"}
-          breadCrumb2={"Pacientes"}
+          breadCrumb2={"Citas"}
           ruta1={"/home"}
         />
 
         <section className="content">
           <div className="card">
             <div className="card-header">
-              <h3 className="card-title"><Link to={"/pacientes-crear"} className="btn btn-block btn-primary btn-sm">Insertar paciente</Link></h3>
+              <h3 className="card-title"><Link to={"/proyectos-admin"} className="btn btn-block btn-primary btn-sm">Crear cita</Link></h3>
 
               <div className="card-tools">
                 <button
@@ -75,25 +75,24 @@ const ProyectosAdmin = () => {
                 <thead>
                   <tr>
                     <th style={{ width: "5%" }}>Id</th>
-                    <th style={{ width: "20%" }}>Nombre</th>
-                    <th style={{ width: "20%" }}>Email</th>
-                    <th style={{ width: "20%" }}>Tipo documento</th>
-                    <th style={{ width: "15%" }}>Número documento</th>
-                    <th style={{ width: "20%" }}>Opciones</th>
+                    <th style={{ width: "15%" }}>Nombre</th>
+                    <th style={{ width: "10%" }}>Fecha</th>
+                    <th style={{ width: "10%" }}>Hora</th>
+                    <th style={{ width: "20%" }}>IPS</th>
+                    <th style={{ width: "15%" }}>Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {data.Pacientes.map((paciente) => (
-                    <tr key={paciente.id}>
-                      <td>{paciente.id}</td>
-                      <td>{paciente.full_name}</td>
-                      <td>{paciente.email}</td>
-                      <td>{paciente.document_type}</td>
-                      <td>{paciente.document_number}</td>
+                  {data.Citas.map((cita) => (
+                    <tr key={cita.id}>
+                      <td>{cita.id}</td>
+                      <td>{cita.full_name}</td>
+                      <td>{cita.fecha}</td>
+                      <td>{cita.hora}</td>
+                      <td>{cita.ips}</td>
                       <td>
-                      <Link to={`/crear-cita/${paciente.id}-${paciente.full_name}`} className="btn btn-sm btn-info">Cita</Link> &nbsp; &nbsp; 
-                        <Link to={`/pacientes-editar/${paciente.id}-${paciente.full_name}-${paciente.email}-${paciente.document_type}-${paciente.document_number}-${paciente.password}`} className="btn btn-sm btn-primary">Editar</Link> &nbsp; &nbsp; 
-                        <button onClick={(e) => eliminarPaciente(e, paciente.id)} className="btn btn-sm btn-danger">Borrar</button>
+                        <Link to={`/editar-cita/${cita.id}@${cita.full_name}@${cita.fecha}@${cita.hora}@${cita.ips}`} className="btn btn-sm btn-primary">Editar cita</Link> &nbsp; &nbsp; 
+                        <button onClick={(e) => eliminarCita(e, cita.id)} className="btn btn-sm btn-danger">Cancelar cita</button>
                       </td>
                     </tr>
                   ))}
@@ -105,7 +104,7 @@ const ProyectosAdmin = () => {
       </div>
       <Footer></Footer>
     </div>
-  );
-};
-
-export default ProyectosAdmin;
+     );
+}
+ 
+export default ListadoCitas;

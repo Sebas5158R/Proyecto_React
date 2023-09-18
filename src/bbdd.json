@@ -104,5 +104,14 @@
       "dias_atencion": "L - V",
       "hora_atencion": "8am - 7pm"
     }
+  ],
+  "Citas": [
+    {
+      "full_name": "Camila Avila",
+      "fecha": "2023-09-26",
+      "hora": "11:30",
+      "ips": "Hospital Infantil los Ángeles",
+      "id": 1
+    }
   ]
 }

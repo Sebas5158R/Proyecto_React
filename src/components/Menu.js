@@ -20,7 +20,15 @@ const Menu = () => {
                             Pacientes
                         </p>
                     </Link>
-                </li>   
+                </li> 
+                <li className="nav-item">
+                    <Link to={"/listar-citas"} className="nav-link">
+                        <i className="nav-icon fas fa-chart-pie" />
+                        <p>
+                            Citas
+                        </p>
+                    </Link>
+                </li>    
             </ul>
         </nav>
 
